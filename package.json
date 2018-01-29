@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-		"lodash": "^4.17.4",
-		"react": "^16.1.1",
-		"react-dom": "^16.1.1",
-		"react-redux": "^5.0.6",
-		"redux": "^3.7.2",
-		"redux-thunk": "^2.2.0"
-	},
+    "concurrently": "^3.5.1",
+    "electron": "^1.7.11",
+    "electron-builder": "^19.55.2",
+    "electron-is-dev": "^0.3.0",
+    "lodash": "^4.17.4",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "wait-on": "^2.1.0"
+  },
   "devDependencies": {
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
@@ -56,8 +61,10 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\""
   },
+  "main": "public/electron.js",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
