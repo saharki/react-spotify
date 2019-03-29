@@ -1,0 +1,25 @@
+@import '../../utils/variables';
+
+.lyrics-container {
+    height: 100%;
+    width: 100%;
+    margin-top: 60px;
+
+    .lyrics {
+        height: 100%;
+        color: brown;
+        text-align: center;
+    }
+
+    .lyrics-line {
+        min-height: 10px;
+    }
+
+    .control-button {
+        min-height: 10px;
+        display: inline-block;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+}
